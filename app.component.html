@@ -1,0 +1,8 @@
+<div class="chat-container">
+  <div *ngFor="let message of messages">
+    <div [ngClass]="{'user-message': message.role === 'user', 'bot-message': message.role === 'bot'}">
+      {{ message.content }}
+    </div>
+  </div>
+  <input [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Type a message..." />
+</div>
